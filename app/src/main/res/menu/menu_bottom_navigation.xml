@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--IMPORTANT menus IDs must match fragments IDs in navigation graph-->
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/first_fragment"
+            android:title="@string/menu_first_fragment" />
+
+        <item
+            android:id="@+id/second_fragment"
+            android:title="@string/menu_second_fragment" />
+
+    </group>
+</menu>

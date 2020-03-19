@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">NavigationTemplate</string>
+
+    <string name="menu_first_fragment">First Fragment</string>
+    <string name="menu_second_fragment">Second Fragment</string>
+
+</resources>
