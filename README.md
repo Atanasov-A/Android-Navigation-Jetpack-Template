@@ -16,8 +16,7 @@ Make sure you change your app theme and add this themes to your ``` app/src/main
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light"/>
 ```
 ## Setup Drawer Resources (Menus)
-First create a ```menu_drawer_navigation.xml``` file. It should be located in ```app/src/main/res/menu/menu_drawer_navigation.xml```. If you don't have a menu folder, you should create one. To create a menu folder you should right click res folder -> New -> Android Resource Directory -> Resource type: menu.\
-**Important notice** If the id of the MenuItem matches the id of the destination, the NavController can then navigate to that destination. Make sure, that your MenuItems IDs match IDs in ```nav_graph.xml``` (We will talk about it later).
+First create a ```menu_drawer_navigation.xml``` file. It should be located in ```app/src/main/res/menu/menu_drawer_navigation.xml```. If you don't have a menu folder, you should create one. To create a menu folder you should right click res folder -> New -> Android Resource Directory -> Resource type: menu.
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
@@ -34,4 +33,29 @@ First create a ```menu_drawer_navigation.xml``` file. It should be located in ``
 
     </group>
 </menu>
+```
+## Setup Navigation
+In ```app/src/main/res``` create a folder navigation and add a ```nav_graph.xml``` file. At the end the path should look so ``` app/src/main/res/navigation/nav_graph.xml```. In ```nav.graph.xml``` you should define your fragments.\
+**Important notice** Make sure, that your fragments IDs match MenuItems IDs in ```menu_drawer_navigation.xml```  Reason: *If the id of the MenuItem matches the id of the destination, the NavController can then navigate to that destination.*
+
+```
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/first_fragment">
+
+    <fragment
+        android:id="@+id/first_fragment"
+        android:name="com.example.navigationtemplate.FirstFragment"
+        android:label="@string/menu_first_fragment"
+        tools:layout="@layout/fragment_first" />
+
+    <fragment
+        android:id="@+id/second_fragment"
+        android:name="com.example.navigationtemplate.SecondFragment"
+        android:label="@string/menu_second_fragment"
+        tools:layout="@layout/fragment_second" />
+
+</navigation>
 ```
