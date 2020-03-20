@@ -16,8 +16,8 @@ Make sure you change your app theme and add this themes to your ``` app/src/main
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light"/>
 ```
 ## Setup Drawer Resources (Menus)
-First create a ```menu_drawer_navigation.xml``` file. It should be located in ```app/src/main/res/menu/menu_drawer_navigation.xml```. If you don't have a menu folder, you should create one. To create a menu folder you should right click res folder -> New -> Android Resource Directory -> Resource type: menu.
-** Important notice ** If the id of the MenuItem matches the id of the destination, the NavController can then navigate to that destination. Make sure, that your MenuItems IDs match IDs in the nav_graph (We will talk about it later).
+First create a ```menu_drawer_navigation.xml``` file. It should be located in ```app/src/main/res/menu/menu_drawer_navigation.xml```. If you don't have a menu folder, you should create one. To create a menu folder you should right click res folder -> New -> Android Resource Directory -> Resource type: menu.\
+**Important notice** If the id of the MenuItem matches the id of the destination, the NavController can then navigate to that destination. Make sure, that your MenuItems IDs match IDs in the nav_graph (We will talk about it later).
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
