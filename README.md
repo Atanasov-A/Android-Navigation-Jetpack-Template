@@ -59,3 +59,22 @@ In ```app/src/main/res``` create a folder navigation and add a ```nav_graph.xml`
 
 </navigation>
 ```
+## Setup toolbar
+To setup an app toolbar they are two oportunites. One is to create a separate layout and include it or to put the code snippet into  ```app/src/main/res/layout/activity_main.xml``` 
+
+```
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:popupTheme="@style/AppTheme.PopupOverlay"/>
+
+        </com.google.android.material.appbar.AppBarLayout>
+```
