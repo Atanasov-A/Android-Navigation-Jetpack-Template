@@ -81,6 +81,7 @@ In ```app/src/main/res``` create a folder navigation and add a ```nav_graph.xml`
 ```
 
 ## Setup Drawer in Activity 
+For detailed information please look at the commentars in the following code.
 
 ``` <?xml version="1.0" encoding="utf-8"?>
 <androidx.drawerlayout.widget.DrawerLayout
@@ -130,6 +131,7 @@ In ```app/src/main/res``` create a folder navigation and add a ```nav_graph.xml`
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:itemTextColor="@color/colorPrimaryDark"
+            <!-- Link the menus to the view -->
             app:menu="@menu/menu_bottom_navigation" />
 
     </LinearLayout>
@@ -141,7 +143,11 @@ In ```app/src/main/res``` create a folder navigation and add a ```nav_graph.xml`
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
+        <!-- If you don't need a header you can delete this line. -->
+        <!-- But if you want to use it you should create a header_layout. -->
+        <!-- NOTICE: Look at layout code in the repository.-->
         app:headerLayout="@layout/layout_nav_header"
+        <!-- Link the menus to the view -->
         app:menu="@menu/menu_drawer_navigation"/>
 
 </androidx.drawerlayout.widget.DrawerLayout>
