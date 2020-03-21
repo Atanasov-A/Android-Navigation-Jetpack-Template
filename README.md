@@ -81,7 +81,7 @@ In ```app/src/main/res``` create a folder navigation and add a ```nav_graph.xml`
 ```
 
 ## Setup Drawer in Activity 
-For detailed information please look at the commentars in the following code.
+For detailed information please look at the comments in the following code.
 
 ``` <?xml version="1.0" encoding="utf-8"?>
 <androidx.drawerlayout.widget.DrawerLayout
