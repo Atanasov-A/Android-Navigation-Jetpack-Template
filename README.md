@@ -34,6 +34,27 @@ First create a ```menu_drawer_navigation.xml``` file. It should be located in ``
     </group>
 </menu>
 ```
+You should follow the same steps if you want to build bottom navigation. You should create a new menu file ```app/src/main/res/menu/menu_bottom_navigation.xml``` with the following code:
+
+```
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/first_fragment"
+            android:title="@string/menu_first_fragment" />
+
+        <item
+            android:id="@+id/second_fragment"
+            android:title="@string/menu_second_fragment" />
+
+    </group>
+</menu>
+```
+
+**Important notice** Make sure, that your fragments IDs match MenuItems IDs in ```menu/menu_drawer_navigation.xml```  or/and ```menu/menu_bottom_navigation.xml```  Reason: *If the id of the MenuItem matches the id of the destination, the NavController can then navigate to that destination.*
+
 ## Setup Navigation
 In ```app/src/main/res``` create a folder navigation and add a ```nav_graph.xml``` file. At the end the path should look so ``` app/src/main/res/navigation/nav_graph.xml```. In ```nav.graph.xml``` you should define your fragments.\
 
@@ -58,28 +79,6 @@ In ```app/src/main/res``` create a folder navigation and add a ```nav_graph.xml`
 
 </navigation>
 ```
-You should follow the same steps if you want to build bottom navigation. You should create a new menu file ```app/src/main/res/menu/menu_bottom_navigation.xml``` with the following code:
-
-```
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <group android:checkableBehavior="single">
-
-        <item
-            android:id="@+id/first_fragment"
-            android:title="@string/menu_first_fragment" />
-
-        <item
-            android:id="@+id/second_fragment"
-            android:title="@string/menu_second_fragment" />
-
-    </group>
-</menu>
-```
-
-
-**Important notice** Make sure, that your fragments IDs match MenuItems IDs in ```menu/menu_drawer_navigation.xml```  or/and ```menu/menu_bottom_navigation.xml```  Reason: *If the id of the MenuItem matches the id of the destination, the NavController can then navigate to that destination.*
-
 
 ## Setup Drawer in Activity 
 
