@@ -152,3 +152,54 @@ For detailed information please look at the comments in the following code.
 
 </androidx.drawerlayout.widget.DrawerLayout>
 ```
+Now let's set up the navigation in our activity ``` app/src/main/java/com/example/navigationtemplate/MainActivity.java```.\
+Setup drawer navigation:
+
+```
+    private void setUpNavigation() {
+        DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        NavigationView navigationView = findViewById(R.id.navigation_view);
+
+        //Each menu is a top level destination
+        appBarConfiguration = new AppBarConfiguration.Builder(R.id.first_fragment, R.id.second_fragment)
+                .setOpenableLayout(drawerLayout)
+                .build();
+
+        navController = Navigation.findNavController(this, R.id.fragment_nav_host);
+
+        //IMPORTANT When you use theme with NoActionBar you should pass appBar as a configuration
+        NavigationUI.setupWithNavController(toolbar, navController, appBarConfiguration);
+        //Connect view with the controller
+        NavigationUI.setupWithNavController(navigationView, navController);
+    }
+```
+
+Setup bottom navigation:
+
+```
+ private void setUpBottomNavigation() {
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        //Connect view with the controller
+        NavigationUI.setupWithNavController(bottomNavigationView, navController);
+    }
+```
+To make your navigation work you should override ```onSupportNavigateUp```.
+```
+  @Override
+    public boolean onSupportNavigateUp() {
+        return NavigationUI.navigateUp(navController, appBarConfiguration)
+                || super.onSupportNavigateUp();
+    }
+```
+At the end don't forget to call your set up methods.
+```
+ @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        setUpNavigation();
+        setUpBottomNavigation();
+    }
+```
